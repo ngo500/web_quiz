@@ -1,5 +1,47 @@
+/*
+Main Page
+*/
 body{
   background-color: lightpink;
+  font-family: Helvetica;
+}
+
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2{
+  color: black;
+  text-shadow: 1px 1px white;
+}
+
+
+.content h1{
+  animation-name: floatdown;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  position: relative;
+}
+
+.content h2{
+  animation-name: floatup;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  position: relative;
+}
+
+@keyframes floatdown {
+  50%{
+    transform: translateY(20px);
+  }
+}
+
+@keyframes floatup {
+  50%{
+    transform: translateY(-20px);
+  }
 }
 
 /*
@@ -8,6 +50,9 @@ Top Navigation Bar
 .nav{
     background-color: lightgrey;
     overflow: hidden;
+    border-radius: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px grey;
 }
 
 .nav a:first-child{
@@ -26,8 +71,7 @@ Top Navigation Bar
 }
 
 .nav a:hover{
-  background-color:lightgreen;
-  color: green;
+  background-color:grey;
 }
 
 .nav a.active{
