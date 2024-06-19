@@ -1,3 +1,35 @@
 body{
   background-color: lightpink;
 }
+
+/*
+Top Navigation Bar
+*/
+.nav{
+    background-color: lightgrey;
+    overflow: hidden;
+}
+
+.nav a:first-child{
+  float: left;
+}
+
+.nav a{
+  float: right;
+  background-color: lightgrey;
+  display: block;
+  color: black;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav a:hover{
+  background-color:lightgreen;
+  color: green;
+}
+
+.nav a.active{
+  background-color:yellow;
+}
