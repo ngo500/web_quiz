@@ -21,25 +21,27 @@
       </div>
     </nav>
 
-    <div class="content">
-      <h2>. . .</h2>
-      <h1>QUIZ PAGE</h1>
-      <h2>. . .</h2>
-
+    <div class="quizpage">
+      <div class="quizheader" id="quizheader">
+        <h1>QUIZ PAGE</h1>
+      </div>
       <div class="selection" id="selection">
         <p>Please select a quiz from the options below:</p>
       </div>
 
+      <h1 class="quizname" id="quizname"></h1>
+
       <div class="quizlist" id="quizlist">
-        <button class="timetwelvehours"
-        onClick="loadQuiz()" 
+        <button class="quiztimetwelvehoursbutton"
+        onClick="loadQuiz(quiztimetwelvehoursbutton)"
         id="quiztimetwelvehoursbutton">Time- 12 Hours</button>
-        <!--- <a href="javascript:null" onClick="javascript:the_function()"">ok</a> --->
       </div>
 
-      <div class="questionnumber" id="questionnumber">NUM</div>
-      <div class="question" id="question">Q</div>
-      <div class="answerbox" id="answerbox">BOX</div>
+      <p class="questionnumber" id="questionnumber"></p>
+      <p class="nonchangingquestion" id="nonchangingquestion"></p>
+      <p class="question" id="question"></p>
+
+      <input class="answerbox" id="answerbox"></input>
       <button class ="submitbutton" click="checkAnswer()" id="submitbutton">Submit</button>
       <div class="score" id="score">SCORE</div>
 

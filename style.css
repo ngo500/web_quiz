@@ -17,7 +17,7 @@ body{
   font-weight: 500;
 }
 
-.content{
+.content, .quizpage{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,7 +70,8 @@ Quiz Selection/Quiz Page
   text-decoration: none;
 }
 
-.quizlist button{
+.quizpage button{
+  align-items: center;
   background-color: lightgrey;
   border-radius: 15px;
   border-style: none;
@@ -87,7 +88,15 @@ Quiz Selection/Quiz Page
   background-color:grey;
 }
 
+.quizname{
+  display:none;
+}
+
 .questionnumber{
+  display:none;
+}
+
+.nonchangingquestion{
   display:none;
 }
 
@@ -97,6 +106,9 @@ Quiz Selection/Quiz Page
 
 .answerbox{
   display:none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
 
 .submitbutton{
