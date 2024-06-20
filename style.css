@@ -1,22 +1,38 @@
 /*
+Fonts
+*/
+.noto-sans-kr-font-regular {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*
 Main Page
 */
 body{
   background-color: lightpink;
-  font-family: Helvetica;
+  font-family: Noto Sans KR;
+  font-weight: 500;
 }
 
 .content{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #fafafa;
+  border-radius: 10px;
+  border-radius: 10px;
+  padding: 100px 10px;
 }
 
 h1, h2{
   color: black;
   text-shadow: 1px 1px white;
+  font-weight: 800;
 }
-
 
 .content h1{
   animation-name: floatdown;
@@ -42,6 +58,53 @@ h1, h2{
   50%{
     transform: translateY(-20px);
   }
+}
+
+/*
+Quiz Selection/Quiz Page
+*/
+
+.quizlist a{
+  color: black;
+  display: block;
+  text-decoration: none;
+}
+
+.quizlist button{
+  background-color: lightgrey;
+  border-radius: 15px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .25px;
+  overflow: visible;
+  padding: 4px 24px;
+}
+
+.quizlist button:hover{
+  background-color:grey;
+}
+
+.questionnumber{
+  display:none;
+}
+
+.question{
+  display:none;
+}
+
+.answerbox{
+  display:none;
+}
+
+.submitbutton{
+  display:none;
+}
+
+.score{
+  display:none;
 }
 
 /*

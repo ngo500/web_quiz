@@ -5,20 +5,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <title> Quiz </title>
 </head>
 
 <body>
   <div class="page">
-    <div class="nav">
-      <a href="index.html">Home</a>
-      <a href="quiz.html">Quiz</a>
-      <a href="about.html">About</a>
-    </div>
+    <nav>
+      <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="about.html">About</a>
+      </div>
+    </nav>
 
     <div class="content">
-      <h2> . . . </h2>
-      <h1> QUIZ PAGE </h1>
-      <h2> . . . </h2>
+      <h2>. . .</h2>
+      <h1>QUIZ PAGE</h1>
+      <h2>. . .</h2>
+
+      <div class="selection" id="selection">
+        <p>Please select a quiz from the options below:</p>
+      </div>
+
+      <div class="quizlist" id="quizlist">
+        <button class="timetwelvehours"
+        onClick="loadQuiz()" 
+        id="quiztimetwelvehoursbutton">Time- 12 Hours</button>
+        <!--- <a href="javascript:null" onClick="javascript:the_function()"">ok</a> --->
+      </div>
+
+      <div class="questionnumber" id="questionnumber">NUM</div>
+      <div class="question" id="question">Q</div>
+      <div class="answerbox" id="answerbox">BOX</div>
+      <button class ="submitbutton" click="checkAnswer()" id="submitbutton">Submit</button>
+      <div class="score" id="score">SCORE</div>
+
+      <script src="quizscript.js"></script>
+
     </div>
   </div>
 </body>
