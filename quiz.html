@@ -41,8 +41,18 @@
       <p class="nonchangingquestion" id="nonchangingquestion"></p>
       <p class="question" id="question"></p>
 
-      <input class="answerbox" id="answerbox"></input>
-      <button class ="submitbutton" click="checkAnswer()" id="submitbutton">Submit</button>
+      <input type="text" class="answerbox" id="answerbox" placeholder="Answer"></input>
+
+      <button type="button" class ="submitbutton" onClick="checkAnswer()" id="submitbutton">Submit</button>
+
+      <p class="correctanswerprompt" id="correctanswerprompt">Correct! The answer was:</p>
+      <p class="incorrectanswerprompt" id="incorrectanswerprompt">Incorrect! The answer was:</p>
+      <p class="revealanswer" id="revealanswer"></p>
+      <p class="userinputanswerprompt" id="userinputanswerprompt">You entered:</p>
+      <p class="userinputanswer" id="userinputanswer"></p>
+
+      <button type="button" class="continuebutton" onClick="nextQuestion()" id="continuebutton">Continue</button>
+
       <div class="score" id="score">SCORE</div>
 
       <script src="quizscript.js"></script>
