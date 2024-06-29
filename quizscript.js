@@ -188,5 +188,38 @@ function nextQuestion(){
 
 //shows the final score of the quiz when there are no more questions left
 function showScore(){
+  //hide questions for quiz
+  document.getElementById('questionnumber').style.display = 'none';
+  document.getElementById('nonchangingquestion').style.display = 'none';
+  document.getElementById('question').style.display = 'none';
 
+  //hide answer from last question
+  document.getElementById('correctanswerprompt').style.display = 'none';
+  document.getElementById('incorrectanswerprompt').style.display = 'none';
+  document.getElementById('revealanswer').style.display = 'none';
+  document.getElementById('userinputanswerprompt').style.display = 'none';
+  document.getElementById('userinputanswer').style.display = 'none';
+  document.getElementById('continuebutton').style.display = 'none';
+
+  //show final score
+  document.getElementById('score').innerHTML = ("Final score is " + currentScore + "/" + (questionType.length-1) + "!");
+  document.getElementById('score').style.display = 'block';
+
+  //show back back button
+  document.getElementById('backbutton').style.display = 'block';
 }//showScore
+
+function quizReset(){
+  //hide quiz selection
+  document.getElementById('quizname').style.display = 'none';
+
+  //hide score results
+  document.getElementById('score').style.display = 'none';
+  document.getElementById('backbutton').style.display = 'none';
+
+  //show quiz page
+  document.getElementById('quizheader').style.display = 'block';
+  document.getElementById('selection').style.display = 'block';
+  document.getElementById('quizlist').style.display = 'block';
+
+}//quizReset
