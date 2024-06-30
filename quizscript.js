@@ -53,6 +53,41 @@ const quizTimetwelvehours = [
   }
 ]//quizTimetwelvehours
 
+const quizTimedaysoftheweek = [
+  {
+    question: 'DEFAULT',
+    answer: ['DEFAULT', 'default']
+  },
+  {
+    question: 'Monday',
+    answer: ['월요일', '월요일.', '월요일 ', '월요일. ']
+  },
+  {
+    question: 'Tuesday',
+    answer: ['화요일', '화요일.', '화요일 ', '화요일. ']
+  },
+  {
+    question: 'Wednesday',
+    answer: ['수요일', '수요일.', '수요일 ', '수요일. ']
+  },
+  {
+    question: 'Thursday',
+    answer: ['목요일', '목요일.', '목요일 ', '목요일. ']
+  },
+  {
+    question: 'Friday',
+    answer: ['금요일', '금요일.', '금요일 ', '금요일. ']
+  },
+  {
+    question: 'Saturday',
+    answer: ['토요일', '토요일.', '토요일 ', '토요일. ']
+  },
+  {
+    question: 'Sunday',
+    answer: ['일요일', '일요일.', '일요일 ', '일요일. ']
+  }
+]//quizTimedaysoftheweek
+
 const quizNumbersinozerototen = [
   {
     question: 'DEFAULT',
@@ -171,6 +206,7 @@ let currentScore = 0;
 function hideQuizlist(){
   document.getElementById('quizprompt').style.display = 'none';
   document.getElementById('quiztimetwelvehoursbutton').style.display = 'none';
+  document.getElementById('quiztimedaysoftheweek').style.display = 'none';
   document.getElementById('quiznumbersinozerototen').style.display = 'none';
   document.getElementById('quiznumbernativeonetoten').style.display = 'none';
   document.getElementById('quizlist').style.display = 'none';
@@ -179,6 +215,7 @@ function hideQuizlist(){
 function showQuizlist(){
   document.getElementById('quizprompt').style.display = 'block';
   document.getElementById('quiztimetwelvehoursbutton').style.display = 'block';
+  document.getElementById('quiztimedaysoftheweek').style.display = 'block';
   document.getElementById('quiznumbersinozerototen').style.display = 'block';
   document.getElementById('quiznumbernativeonetoten').style.display = 'block';
   document.getElementById('quizlist').style.display = 'block';
@@ -256,6 +293,11 @@ function loadQuiz(event){
     document.getElementById('nonchangingquestion').innerHTML = '몇 시예요?';
     document.getElementById('nonchangingquestion').style.display = 'block';
   }//if
+  else if(quizSelection == 'Time- Days of the Week'){
+    questionType = quizTimedaysoftheweek;
+    document.getElementById('nonchangingquestion').innerHTML = '무슨 요일이에요?';
+    document.getElementById('nonchangingquestion').style.display = 'block';
+  }//else if
   else if(quizSelection == 'Number- Sino (0-10)'){
     questionType = quizNumbersinozerototen;
     document.getElementById('nonchangingquestion').innerHTML = '';

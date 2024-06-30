@@ -109,7 +109,11 @@ button:hover{
   display: block;
 }
 
-.quizprompt, .quiztimetwelvehoursbutton, .quiznumbersinozerototen, .quiznumbernativeonetoten{
+.quizprompt,
+.quiztimetwelvehoursbutton,
+.quiztimedaysoftheweek,
+.quiznumbersinozerototen,
+.quiznumbernativeonetoten{
   display: block;
 }
 
