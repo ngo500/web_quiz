@@ -53,6 +53,57 @@ const quizTimetwelvehours = [
   }
 ]
 
+const quizSinozerototen = [
+  {
+    question: 'DEFAULT',
+    answer: ['DEFAULT', 'default']
+  },
+  {
+    question: '0',
+    answer: ['영', '영.', '영이에요', '영이에요.', '영 이에요', '영 이에요.', '공', '공.', '공이에요', '공이에요.', '공 이에요', '공 이에요.']
+  },
+  {
+    question: '1',
+    answer: ['일', '일.', '일이예요', '일이예요.', '일 이예요', '일 이예요.']
+  },
+  {
+    question: '2',
+    answer: []
+  },
+  {
+    question: '3',
+    answer: []
+  },
+  {
+    question: '4',
+    answer: []
+  },
+  {
+    question: '5',
+    answer: []
+  },
+  {
+    question: '6',
+    answer: []
+  },
+  {
+    question: '7',
+    answer: []
+  },
+  {
+    question: '8',
+    answer: []
+  },
+  {
+    question: '9',
+    answer: []
+  },
+  {
+    question: '10',
+    answer: []
+  }
+]
+
 //holds the current question of the quiz
 let currentQuestion = 0;
 
@@ -62,22 +113,83 @@ let questionType = '';
 //holds the amount of correct answers
 let currentScore = 0;
 
-//loads the quiz for the first time
-function loadQuiz(event){
-  //hide/display appropriate sections
-  document.getElementById('quizheader').style.display = 'none';
-  document.getElementById('selection').style.display = 'none';
-  document.getElementById('quizname').style.display = 'block';
+function hideQuizlist(){
+  document.getElementById('quizprompt').style.display = 'none';
+  document.getElementById('quiztimetwelvehoursbutton').style.display = 'none';
   document.getElementById('quizlist').style.display = 'none';
+}//hideQuizlist
+
+function showQuizlist(){
+  document.getElementById('quizprompt').style.display = 'block';
+  document.getElementById('quiztimetwelvehoursbutton').style.display = 'block';
+  document.getElementById('quizlist').style.display = 'block';
+}//showQuizlist
+
+function hideQuestionlayout(){
+  document.getElementById('questionnumber').style.display = 'none';
+  document.getElementById('nonchangingquestion').style.display = 'none';
+  document.getElementById('question').style.display = 'none';
+  document.getElementById('questionlayout').style.display = 'none';
+}//hideQuestionlayout
+
+function showQuestionlayout(){
   document.getElementById('questionnumber').style.display = 'block';
+  document.getElementById('nonchangingquestion').style.display = 'block';
   document.getElementById('question').style.display = 'block';
+  document.getElementById('questionlayout').style.display = 'block';
+}//hideQuestionlayout
+
+function hideInputlayout(){
+  document.getElementById('answerbox').style.display = 'none';
+  document.getElementById('submitbutton').style.display = 'none';
+  document.getElementById('inputlayout').style.display = 'none';
+}//hideInputlayout
+
+function showInputlayout(){
   document.getElementById('answerbox').style.display = 'block';
   document.getElementById('submitbutton').style.display = 'block';
+  document.getElementById('inputlayout').style.display = 'block';
+}//showInputlayout
+
+function hideAnswerlayout(){
+  document.getElementById('revealanswer').style.display = 'none';
+  document.getElementById('userinputanswerprompt').style.display = 'none';
+  document.getElementById('userinputanswer').style.display = 'none';
+  document.getElementById('continuebutton').style.display = 'none';
+  document.getElementById('answerlayout').style.display = 'none';
+}//hideAnswerlayout
+
+function showAnswerlayout(){
+  document.getElementById('revealanswer').style.display = 'block';
+  document.getElementById('userinputanswerprompt').style.display = 'block';
+  document.getElementById('userinputanswer').style.display = 'block';
+  document.getElementById('continuebutton').style.display = 'block';
+  document.getElementById('answerlayout').style.display = 'block';
+}//showAnswerlayout
+
+function hideScorelayout(){
+  document.getElementById('score').style.display = 'none';
+  document.getElementById('backbutton').style.display = 'none';
+  document.getElementById('scorelayout').style.display = 'none';
+}//hideScorelayout
+
+function showScorelayout(){
+  document.getElementById('score').style.display = 'block';
+  document.getElementById('backbutton').style.display = 'block';
+  document.getElementById('scorelayout').style.display = 'block';
+}//showScorelayout
+
+//loads the quiz for the first time
+function loadQuiz(event){
+  //hide appropriate sections
+  document.getElementById('quizheader').style.display = 'none';
+  hideQuizlist();
 
   //display quiz name at top
   var name = document.getElementById('quizname');
   var quizSelection = event.innerHTML;
   name.innerHTML = quizSelection;
+  document.getElementById('quizname').style.display = 'block';
 
   //get correct quiz
   if(quizSelection == 'Time- 12 Hours'){
@@ -94,11 +206,17 @@ function loadQuiz(event){
   //set first question
   document.getElementById('question').innerHTML = questionType[1].question;
 
+  //display question section
+  showQuestionlayout();
+
   //reset answer box
   document.getElementById('answerbox').value = "";
 
   //reset current score
   currentScore = 0;
+
+  //show input box
+  showInputlayout();
 }//loadQuiz
 
 //submit button press-
@@ -122,31 +240,30 @@ function checkAnswer(){
     else{}//else, input answer is false
   }//for
 
-  //hide input box and submit button, show continue button
-  document.getElementById('answerbox').style.display = 'none';
-  document.getElementById('submitbutton').style.display = 'none';
-  document.getElementById('continuebutton').style.display = 'block';
+  //hide questions
+  hideQuestionlayout();
+
+  //hide input box and submit button
+  hideInputlayout();
 
   //if answer was correct,
   if(isAnswerCorrect){
     //show correct answer message
     document.getElementById('correctanswerprompt').style.display = 'block';
+    document.getElementById('incorrectanswerprompt').style.display = 'none';
   }//if
   else{
     //else, show incorrect answer message
     document.getElementById('incorrectanswerprompt').style.display = 'block';
+    document.getElementById('correctanswerprompt').style.display = 'none';
   }//else
+
+  //get input answer
+  document.getElementById('userinputanswer').innerHTML = inputAnswer;
 
   //show correct answer
   document.getElementById('revealanswer').innerHTML = questionToCheck.answer[0];
-  document.getElementById('revealanswer').style.display = 'block';
-
-  //show message saying the user answer
-  document.getElementById('userinputanswerprompt').style.display = 'block';
-
-  //show what the user input
-  document.getElementById('userinputanswer').innerHTML = inputAnswer;
-  document.getElementById('userinputanswer').style.display = 'block';
+  showAnswerlayout();
 }//checkAnswer
 
 //continue button press-
@@ -164,21 +281,17 @@ function nextQuestion(){
     //display correct question
     document.getElementById('question').innerHTML = questionType[currentQuestion].question;
 
+    //show questions
+    showQuestionlayout();
+
     //hide answer from last question
-    document.getElementById('correctanswerprompt').style.display = 'none';
-    document.getElementById('incorrectanswerprompt').style.display = 'none';
-    document.getElementById('revealanswer').style.display = 'none';
-    document.getElementById('userinputanswerprompt').style.display = 'none';
-    document.getElementById('userinputanswer').style.display = 'none';
-    document.getElementById('continuebutton').style.display = 'none';
+    hideAnswerlayout();
 
     //reset answer box
     document.getElementById('answerbox').value = "";
 
     //show answer box and submit button
-    document.getElementById('answerbox').style.display = 'block';
-    document.getElementById('submitbutton').style.display = 'block';
-
+    showInputlayout();
   }//if
   else{
     //else, there are no questions left, show the final score
@@ -189,24 +302,14 @@ function nextQuestion(){
 //shows the final score of the quiz when there are no more questions left
 function showScore(){
   //hide questions for quiz
-  document.getElementById('questionnumber').style.display = 'none';
-  document.getElementById('nonchangingquestion').style.display = 'none';
-  document.getElementById('question').style.display = 'none';
+  hideQuestionlayout();
 
   //hide answer from last question
-  document.getElementById('correctanswerprompt').style.display = 'none';
-  document.getElementById('incorrectanswerprompt').style.display = 'none';
-  document.getElementById('revealanswer').style.display = 'none';
-  document.getElementById('userinputanswerprompt').style.display = 'none';
-  document.getElementById('userinputanswer').style.display = 'none';
-  document.getElementById('continuebutton').style.display = 'none';
+  hideAnswerlayout();
 
-  //show final score
+  //show final score, back button
   document.getElementById('score').innerHTML = ("Final score is " + currentScore + "/" + (questionType.length-1) + "!");
-  document.getElementById('score').style.display = 'block';
-
-  //show back back button
-  document.getElementById('backbutton').style.display = 'block';
+  showScorelayout();
 }//showScore
 
 function quizReset(){
@@ -214,12 +317,9 @@ function quizReset(){
   document.getElementById('quizname').style.display = 'none';
 
   //hide score results
-  document.getElementById('score').style.display = 'none';
-  document.getElementById('backbutton').style.display = 'none';
+  hideScorelayout();
 
   //show quiz page
   document.getElementById('quizheader').style.display = 'block';
-  document.getElementById('selection').style.display = 'block';
-  document.getElementById('quizlist').style.display = 'block';
-
+  showQuizlist();
 }//quizReset

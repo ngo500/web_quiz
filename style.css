@@ -21,7 +21,7 @@ body{
 .content, .quizpage{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   background-color: #fafafa;
   border-radius: 10px;
@@ -65,6 +65,12 @@ h1, h2{
 Quiz Selection/Quiz Page
 */
 
+.quizpage{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .quizlist a{
   color: black;
   display: block;
@@ -89,63 +95,42 @@ Quiz Selection/Quiz Page
   background-color:grey;
 }
 
-.quizname{
-  display:none;
-}
-
-.questionnumber{
-  display:none;
-}
-
-.nonchangingquestion{
-  display:none;
-}
-
-.question{
-  display:none;
-}
-
 .answerbox{
-  display:none;
   padding: 5px;
   border-radius: 5px;
   margin-bottom: 5px;
 }
 
-.submitbutton{
-  display:none;
+.quizheader{
+  display: block;
+}
+
+.quizprompt, .quiztimetwelvehoursbutton{
+  display: block;
+}
+
+.questionnumber, .nonchangingquestion, .question{
+  display: none;
 }
 
 .correctanswerprompt{
-  display:none;
+  display: none;
 }
 
 .incorrectanswerprompt{
-  display:none;
+  display: none;
 }
 
-.revealanswer{
-  display:none;
+.revealanswer, .userinputanswerprompt, .userinputanswer, .continuebutton{
+  display: none;
 }
 
-.userinputanswerprompt{
-  display:none;
+.answerbox, .submitbutton{
+  display: none;
 }
 
-.userinputanswer{
-  display:none;
-}
-
-.continuebutton{
-  display:none;
-}
-
-.score{
-  display:none;
-}
-
-.backbutton{
-  display:none;
+.score, .backbutton{
+  display: none;
 }
 
 /*

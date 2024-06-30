@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div class="page">
+  <div id="page">
     <nav>
       <div class="nav">
         <a href="index.html">Home</a>
@@ -25,36 +25,40 @@
       <div class="quizheader" id="quizheader">
         <h1>QUIZ PAGE</h1>
       </div>
-      <div class="selection" id="selection">
-        <p>Please select a quiz from the options below:</p>
-      </div>
-
-      <h1 class="quizname" id="quizname"></h1>
 
       <div class="quizlist" id="quizlist">
+        <p id="quizprompt">Please select a quiz from the options below:</p>
         <button class="quiztimetwelvehoursbutton"
         onClick="loadQuiz(quiztimetwelvehoursbutton)"
         id="quiztimetwelvehoursbutton">Time- 12 Hours</button>
       </div>
 
-      <p class="questionnumber" id="questionnumber"></p>
-      <p class="nonchangingquestion" id="nonchangingquestion"></p>
-      <p class="question" id="question"></p>
+      <h1 class="quizname" id="quizname"></h1>
 
-      <input type="text" class="answerbox" id="answerbox" placeholder="Answer"></input>
+      <div class="questionlayout" id="questionlayout">
+        <p class="questionnumber" id="questionnumber"></p>
+        <p class="nonchangingquestion" id="nonchangingquestion"></p>
+        <p class="question" id="question"></p>
+      </div>
 
-      <button type="button" class ="submitbutton" onClick="checkAnswer()" id="submitbutton">Submit</button>
+      <div class="answerlayout" id="answerlayout">
+        <p class="correctanswerprompt" id="correctanswerprompt">Correct! The answer was:</p>
+        <p class="incorrectanswerprompt" id="incorrectanswerprompt">Incorrect! The answer was:</p>
+        <p class="revealanswer" id="revealanswer"></p>
+        <p class="userinputanswerprompt" id="userinputanswerprompt">You entered:</p>
+        <p class="userinputanswer" id="userinputanswer"></p>
+        <button type="button" class="continuebutton" onClick="nextQuestion()" id="continuebutton">Continue</button>
+      </div>
 
-      <p class="correctanswerprompt" id="correctanswerprompt">Correct! The answer was:</p>
-      <p class="incorrectanswerprompt" id="incorrectanswerprompt">Incorrect! The answer was:</p>
-      <p class="revealanswer" id="revealanswer"></p>
-      <p class="userinputanswerprompt" id="userinputanswerprompt">You entered:</p>
-      <p class="userinputanswer" id="userinputanswer"></p>
+      <div class="inputlayout" id="inputlayout">
+        <input type="text" class="answerbox" id="answerbox" placeholder="Answer"></input>
+        <button type="button" class ="submitbutton" onClick="checkAnswer()" id="submitbutton">Submit</button>
+      </div>
 
-      <button type="button" class="continuebutton" onClick="nextQuestion()" id="continuebutton">Continue</button>
-
-      <p class="score" id="score"></p>
-      <button type="button" class ="backbutton" onClick="quizReset()" id="backbutton">Return to Quiz Selection</button>
+      <div class="scorelayout" id="scorelayout">
+        <p class="score" id="score"></p>
+        <button type="button" class ="backbutton" onClick="quizReset()" id="backbutton">Return to Quiz Selection</button>
+      </div>
 
       <script src="quizscript.js"></script>
 
