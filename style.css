@@ -71,12 +71,6 @@ Quiz Selection/Quiz Page
   align-items: center;
 }
 
-.quizlist a{
-  color: black;
-  display: block;
-  text-decoration: none;
-}
-
 .quizpage button{
   align-items: center;
   background-color: lightgrey;
@@ -89,6 +83,16 @@ Quiz Selection/Quiz Page
   letter-spacing: .25px;
   overflow: visible;
   padding: 4px 24px;
+}
+
+.quizlist a{
+  color: black;
+  display: block;
+  text-decoration: none;
+}
+
+.quizlist button{
+  margin-bottom: 10px;
 }
 
 button:hover{
@@ -105,7 +109,7 @@ button:hover{
   display: block;
 }
 
-.quizprompt, .quiztimetwelvehoursbutton{
+.quizprompt, .quiztimetwelvehoursbutton, .quiznumbersinozerototen, .quiznumbernativeonetoten{
   display: block;
 }
 

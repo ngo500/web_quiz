@@ -51,59 +51,107 @@ const quizTimetwelvehours = [
     question: '12:00',
     answer: ['열두시', '열두시.', '열두시예요', '열두시 예요', '열두시예요.', '열두시 예요.']
   }
-]
+]//quizTimetwelvehours
 
-const quizSinozerototen = [
+const quizNumbersinozerototen = [
   {
     question: 'DEFAULT',
     answer: ['DEFAULT', 'default']
   },
   {
     question: '0',
-    answer: ['영', '영.', '영이에요', '영이에요.', '영 이에요', '영 이에요.', '공', '공.', '공이에요', '공이에요.', '공 이에요', '공 이에요.']
+    answer: ['영/공', '영', '영.', '영 ', '영. ', '공', '공.', '공 ', '공. ']
   },
   {
     question: '1',
-    answer: ['일', '일.', '일이예요', '일이예요.', '일 이예요', '일 이예요.']
+    answer: ['일', '일.', '일 ', '일. ']
   },
   {
     question: '2',
-    answer: []
+    answer: ['이', '이 ', '이.', '이. ']
   },
   {
     question: '3',
-    answer: []
+    answer: ['삼', '삼.', '삼 ', '삼. ']
   },
   {
     question: '4',
-    answer: []
+    answer: ['사', '사.', '사 ', '사. ']
   },
   {
     question: '5',
-    answer: []
+    answer: ['오', '오.', '오 ', '오. ']
   },
   {
     question: '6',
-    answer: []
+    answer: ['육', '육.', '육 ', '육. ']
   },
   {
     question: '7',
-    answer: []
+    answer: ['칠', '칠.', '칠 ', '칠. ']
   },
   {
     question: '8',
-    answer: []
+    answer: ['팔', '팔.', '팔 ', '팔. ']
   },
   {
     question: '9',
-    answer: []
+    answer: ['구', '구.', '구 ', '구. ']
   },
   {
     question: '10',
-    answer: []
+    answer: ['십', '십.', '십 ', '십. ']
   }
-]
+]//quizNumbersinozerototen
 
+const quizNumbernativeonetoten = [
+  {
+    question: 'DEFAULT',
+    answer: ['DEFAULT', 'default']
+  },
+  {
+    question: '1',
+    answer: ['하나', '하나.', '하나 ', '하나. ']
+  },
+  {
+    question: '2',
+    answer: ['둘', '둘.', '둘 ', '둘. ']
+  },
+  {
+    question: '3',
+    answer: ['셋', '셋.', '셋 ', '셋. ']
+  },
+  {
+    question: '4',
+    answer: ['넷', '넷.', '넷 ', '넷. ']
+  },
+  {
+    question: '5',
+    answer: ['다섯', '다섯.', '다섯 ', '다섯. ']
+  },
+  {
+    question: '6',
+    answer: ['여섯', '여섯.', '여섯 ', '여섯. ']
+  },
+  {
+    question: '7',
+    answer: ['일곱', '일곱.', '일곱 ', '일곱. ']
+  },
+  {
+    question: '8',
+    answer: ['여덟', '여덟.', '여덟 ', '여덟. ']
+  },
+  {
+    question: '9',
+    answer: ['아홉', '아홉.', '아홉 ', '아홉. ']
+  },
+  {
+    question: '10',
+    answer: ['열', '열.', '열 ', '열. ']
+  },
+]//quizNumbernativezerototen
+
+//EVENT listener for enter key when giving input
 document.getElementById('answerbox').addEventListener("keypress", function(e){
   if(e.key === "Enter" || e.key === 13){
     e.preventDefault();
@@ -123,12 +171,16 @@ let currentScore = 0;
 function hideQuizlist(){
   document.getElementById('quizprompt').style.display = 'none';
   document.getElementById('quiztimetwelvehoursbutton').style.display = 'none';
+  document.getElementById('quiznumbersinozerototen').style.display = 'none';
+  document.getElementById('quiznumbernativeonetoten').style.display = 'none';
   document.getElementById('quizlist').style.display = 'none';
 }//hideQuizlist
 
 function showQuizlist(){
   document.getElementById('quizprompt').style.display = 'block';
   document.getElementById('quiztimetwelvehoursbutton').style.display = 'block';
+  document.getElementById('quiznumbersinozerototen').style.display = 'block';
+  document.getElementById('quiznumbernativeonetoten').style.display = 'block';
   document.getElementById('quizlist').style.display = 'block';
 }//showQuizlist
 
@@ -204,6 +256,16 @@ function loadQuiz(event){
     document.getElementById('nonchangingquestion').innerHTML = '몇 시예요?';
     document.getElementById('nonchangingquestion').style.display = 'block';
   }//if
+  else if(quizSelection == 'Number- Sino (0-10)'){
+    questionType = quizNumbersinozerototen;
+    document.getElementById('nonchangingquestion').innerHTML = '';
+    document.getElementById('nonchangingquestion').style.display = 'block';
+  }//else if
+  else if(quizSelection == 'Number- Native (1-10)'){
+    questionType = quizNumbernativeonetoten;
+    document.getElementById('nonchangingquestion').innerHTML = '';
+    document.getElementById('nonchangingquestion').style.display = 'block';
+  }//else if
   else{}//else
 
   //set current question number to 1
