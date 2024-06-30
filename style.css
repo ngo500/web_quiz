@@ -91,7 +91,7 @@ Quiz Selection/Quiz Page
   padding: 4px 24px;
 }
 
-.quizlist button:hover{
+button:hover{
   background-color:grey;
 }
 

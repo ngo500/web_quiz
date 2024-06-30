@@ -104,6 +104,13 @@ const quizSinozerototen = [
   }
 ]
 
+document.getElementById('answerbox').addEventListener("keypress", function(e){
+  if(e.key === "Enter" || e.key === 13){
+    e.preventDefault();
+    document.getElementById('submitbutton').click();
+  }//if
+});
+
 //holds the current question of the quiz
 let currentQuestion = 0;
 
@@ -306,6 +313,9 @@ function showScore(){
 
   //hide answer from last question
   hideAnswerlayout();
+
+  //hide input layout
+  hideInputlayout();
 
   //show final score, back button
   document.getElementById('score').innerHTML = ("Final score is " + currentScore + "/" + (questionType.length-1) + "!");
