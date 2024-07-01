@@ -187,10 +187,16 @@ const quizNumbernativeonetoten = [
 ]//quizNumbernativezerototen
 
 //EVENT listener for enter key when giving input
-document.getElementById('answerbox').addEventListener("keypress", function(e){
+document.addEventListener("keydown", function(e){
   if(e.key === "Enter" || e.key === 13){
     e.preventDefault();
-    document.getElementById('submitbutton').click();
+    if(document.getElementById('submitbutton').style.display === 'block'){
+      document.getElementById('submitbutton').click();
+    }//if
+    else if(document.getElementById('continuebutton').style.display === 'block'){
+      document.getElementById('continuebutton').click();
+    }//else if
+    else{}//else
   }//if
 });
 
