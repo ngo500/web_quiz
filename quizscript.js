@@ -381,6 +381,9 @@ function checkAnswer(){
   //show correct answer
   document.getElementById('revealanswer').innerHTML = questionToCheck.answer[0];
   showAnswerlayout();
+
+  //focus on continue button
+  document.getElementById('continuebutton').focus();
 }//checkAnswer
 
 //continue button press-
@@ -409,6 +412,9 @@ function nextQuestion(){
 
     //show answer box and submit button
     showInputlayout();
+
+    //focus on input
+    document.getElementById('answerbox').focus();
   }//if
   else{
     //else, there are no questions left, show the final score
